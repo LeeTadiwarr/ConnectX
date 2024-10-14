@@ -1,1 +1,1 @@
-# ConnectX
+# A connect 4 variant showing the power of Java's OOP and Classes Paradigm
