@@ -5,6 +5,7 @@ public class ConnectXMain{
     public static void main(String[] args) {
         ConnectX cx; // Creates the ConnectX object (DO NOT DELETE IT)
         Scanner scanner = new Scanner(System.in);
+        Displayer d = new Displayer();
         
         System.out.println("Welcome to Connect X!");
         
@@ -25,7 +26,7 @@ public class ConnectXMain{
                 System.out.println("Current Round: " + cx.GetCurrRound());
                 System.out.println("Current Player: " + cx.GetCurrPlayerChar());
                 System.out.println("Grid:");
-                displayGrid(cx.GetGrid());
+                d.ShowGrid(cx.GetGrid());
                 
                 System.out.print("Choose a column (0-6): ");
                 int column = scanner.nextInt();
@@ -65,15 +66,6 @@ public class ConnectXMain{
         scanner.close(); // Close the scanner
     }
 
-    // Method to display the grid
-    private static void displayGrid(Disc[][] grid) {
-        for (int row = 0; row < grid.length; row++) {
-            for (int col = 0; col < grid[row].length; col++) {
-                if (grid[row][col] == null) {
-                    System.out.print(". "); // Empty space
-                } else {
-                    System.out.print((grid[row][col].GetDiscType() == Disc.O_DISC ? 'O' : 'X') + " "); // Disc symbol
-                }
             }
             System.out.println();
         }
